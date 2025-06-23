@@ -1,15 +1,25 @@
-function login(e) {
-  e.preventDefault();
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-
-  if (username === 'kamalthakur' && password === 'vinayraj') {
-    window.location.href = 'technician-dashboard.html';
-  } else {
-    alert('Wrong username or password!');
-  }
+function logout() {
+  alert("Logging out...");
+  window.location.href = 'index.html';
 }
 
-function logout() {
-  window.location.href = 'index.html';
+function startCall() {
+  const time = new Date().toLocaleTimeString();
+  const entry = `Call started at ${time}`;
+  addLog(entry);
+}
+
+function sendMessage() {
+  const time = new Date().toLocaleTimeString();
+  const entry = `Message sent at ${time}`;
+  addLog(entry);
+}
+
+function addLog(text) {
+  const list = document.getElementById("logList");
+  if (list) {
+    const item = document.createElement("li");
+    item.textContent = text;
+    list.appendChild(item);
+  }
 }
