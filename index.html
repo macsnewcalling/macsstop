@@ -1,12 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>MASCS Homepage</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MASCS - Homepage</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: Arial, sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 50px;
+      text-shadow: 2px 2px 5px rgba(0,255,255,0.3);
+    }
+
+    .button-box {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 280px;
+    }
+
+    .button-box button {
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #00c6ff;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(0,255,255,0.4);
+      transition: 0.3s;
+    }
+
+    .button-box button:hover {
+      background-color: #0072ff;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
   <h1>Welcome to MASCS</h1>
-  <button onclick="window.location.href='technician-login.html'">Technician Mode</button>
-  <button onclick="window.location.href='customer-dashboard.html'">Customer Mode</button>
+
+  <div class="button-box">
+    <button onclick="location.href='technician-login.html'">👨‍🔧 Technician Mode</button>
+    <button onclick="location.href='customer-dashboard.html'">🙋‍♂️ Customer Mode</button>
+  </div>
 </body>
 </html>
