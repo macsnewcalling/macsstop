@@ -1,19 +1,17 @@
-<!-- technician-login.html -->
-<form onsubmit="login(event)">
-  <input type="text" id="username" placeholder="Username" />
-  <input type="password" id="password" placeholder="Password" />
-  <button type="submit">Login</button>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Technician Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Technician Login</h2>
+  <form onsubmit="login(event)">
+    <input type="text" id="username" placeholder="Username" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <button type="submit">Login</button>
+  </form>
 
-<script>
-function login(e) {
-  e.preventDefault();
-  const user = document.getElementById('username').value;
-  const pass = document.getElementById('password').value;
-  if (user === 'kamalthakur' && pass === 'vinayraj') {
-    window.location.href = 'technician-dashboard.html';
-  } else {
-    alert("Wrong credentials");
-  }
-}
-</script>
+  <script src="script.js"></script>
+</body>
+</html>
