@@ -2,10 +2,23 @@
 <html>
 <head>
   <title>Technician Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
 <body>
-  <h2>Technician Dashboard</h2>
-  <button onclick="logout()">Logout</button>
+  <h2>👨‍🔧 Technician Dashboard</h2>
+
+  <div>
+    <button onclick="startCall()">📞 Call Customer</button>
+    <button onclick="sendMessage()">💬 Message Customer</button>
+  </div>
+
+  <div id="log">
+    <h3>📁 Call & Message Logs</h3>
+    <ul id="logList"></ul>
+  </div>
+
+  <br>
+  <button onclick="logout()">🔓 Logout</button>
 </body>
 </html>
