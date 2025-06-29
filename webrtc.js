@@ -57,15 +57,12 @@ async function initCall(isCaller) {
     });
 }
 
-// 📞 Start Call
 function startCall() {
   initCall(true);
 }
 
-// ✅ Accept Call
 async function acceptCall() {
   document.getElementById("popup").style.display = "none";
-
   if (!peerConnection) await initCall(false);
 
   callRef.once("value").then(async snapshot => {
@@ -81,13 +78,11 @@ async function acceptCall() {
   });
 }
 
-// ❌ Decline Call
 function declineCall() {
   document.getElementById("popup").style.display = "none";
   callRef.remove();
 }
 
-// 🔴 End Call
 function endCall() {
   if (peerConnection) {
     peerConnection.close();
