@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA_ccs5fa1C6x8UGJORrWJv0aLMN0geO8I",
-  authDomain: "macsstop1.firebaseapp.com",
-  projectId: "macsstop1",
-  storageBucket: "macsstop1.firebasestorage.app",
-  messagingSenderId: "925533128989",
-  appId: "1:925533128989:web:33ea844a99106a453c79f4"
+  apiKey: "AIzaSyASyKfl3cPY4Mays3uFTdsrANlvC4IQtfU",
+  authDomain: "callkarenge.firebaseapp.com",
+  projectId: "callkarenge",
+  storageBucket: "callkarenge.firebasestorage.app",
+  messagingSenderId: "335167118690",
+  appId: "1:335167118690:web:e1c034c2832577383c203b"
 };
 
 // Initialize Firebase
