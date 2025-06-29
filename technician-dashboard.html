@@ -5,73 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Technician Dashboard - MASCS</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      font-family: Arial, sans-serif;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 50px;
-      margin: 0;
-    }
 
-    h2 {
-      font-size: 30px;
-      margin-bottom: 30px;
-      text-shadow: 2px 2px 5px rgba(0,255,255,0.3);
-    }
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"></script>
+  <script src="firebase-config.js"></script>
 
-    .button-group {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 40px;
-    }
-
-    button {
-      padding: 15px 25px;
-      font-size: 16px;
-      font-weight: bold;
-      border: none;
-      border-radius: 10px;
-      background-color: #00c6ff;
-      color: #fff;
-      cursor: pointer;
-      box-shadow: 0 0 15px rgba(0,255,255,0.3);
-      transition: 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #0072ff;
-      transform: scale(1.05);
-    }
-
-    #log {
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
-      padding: 20px;
-      width: 80%;
-      max-width: 500px;
-      box-shadow: 0 0 10px rgba(0,255,255,0.2);
-    }
-
-    #log h3 {
-      margin-bottom: 15px;
-      border-bottom: 1px solid #00c6ff;
-      padding-bottom: 5px;
-    }
-
-    #logList {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    #logList li {
-      padding: 5px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-  </style>
+  <!-- Scripts -->
+  <script src="webrtc.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <h2>👨‍🔧 Technician Dashboard</h2>
@@ -79,6 +21,7 @@
   <div class="button-group">
     <button onclick="startCall()">📞 Call Customer</button>
     <button onclick="sendMessage()">💬 Message Customer</button>
+    <button onclick="endCall()">❌ End Call</button>
     <button onclick="logout()">🔓 Logout</button>
   </div>
 
@@ -87,6 +30,13 @@
     <ul id="logList"></ul>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Incoming Call Popup -->
+  <div id="popup">
+    <p>📞 Incoming call from Customer</p>
+    <button onclick="acceptCall()">✅ Accept</button>
+    <button onclick="declineCall()">❌ Decline</button>
+  </div>
+
+  <audio id="remoteAudio" autoplay></audio>
 </body>
 </html>
