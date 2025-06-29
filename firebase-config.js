@@ -1,8 +1,4 @@
 // firebase-config.js
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getDatabase } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyASyKfl3cPY4Mays3uFTdsrANlvC4IQtfU",
   authDomain: "callkarenge.firebaseapp.com",
@@ -14,8 +10,5 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-
-// Export DB to use in other files
-export { db };
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
