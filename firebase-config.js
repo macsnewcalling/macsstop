@@ -1,17 +1,21 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+// firebase-config.js
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyASyKfl3cPY4Mays3uFTdsrANlvC4IQtfU",
   authDomain: "callkarenge.firebaseapp.com",
+  databaseURL: "https://callkarenge-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "callkarenge",
-  storageBucket: "callkarenge.firebasestorage.app",
+  storageBucket: "callkarenge.appspot.com",
   messagingSenderId: "335167118690",
   appId: "1:335167118690:web:e1c034c2832577383c203b"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+// Export DB to use in other files
+export { db };
